@@ -49,7 +49,7 @@ export default function Finance() {
         <section className="mb-12">
           <div className="bg-white rounded-lg shadow-lg p-4">
             <iframe 
-              src="/sankey_diagram.html" 
+              src="/nihon-u-student-autonomy/sankey_diagram.html" 
               style={{width: '100%', height: '800px', border: 'none'}}
               onLoad={() => setIframeLoaded(true)}
             ></iframe>
