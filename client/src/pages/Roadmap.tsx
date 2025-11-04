@@ -107,9 +107,9 @@ export default function Roadmap() {
           <p className="mb-6">
             学生自治会設立に向けた署名活動や意見交換会に参加してください。皆さんの声が、日大を変えます。
           </p>
-          <button className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50">
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSe9JGWRppBHczwj1ruRSvRkaLetJgvtQWbT7ywmvodQtZHweA/viewform" target="_blank" rel="noopener noreferrer" className="inline-block bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50">
             参加する
-          </button>
+          </a>
         </section>
       </main>
 
