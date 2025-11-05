@@ -145,8 +145,76 @@ export default function Finance() {
           </div>
         </section>
 
-        <section className="bg-blue-50 rounded-lg p-8 text-center">
-          <h3 className="text-xl font-bold text-slate-900 mb-4">次のステップ</h3>
+        <section className="bg-green-50 rounded-lg p-8 mb-12">
+          <h3 className="text-2xl font-bold text-slate-900 mb-6">もし学生が大学運営に関われたら？</h3>
+          <div className="space-y-6 text-slate-700">
+            <p className="text-lg font-semibold text-green-700">
+              不正事案によって失われた資金が、学生のために使われていたら、どのような改善ができたでしょうか？
+            </p>
+            
+            <div className="grid md:grid-cols-2 gap-6">
+              <div className="bg-white rounded-lg p-6 border-l-4 border-green-500">
+                <h4 className="font-bold text-slate-900 mb-3">学食の値下げ</h4>
+                <p className="text-sm mb-3">
+                  毎年数億円の不正資金が適切に管理されていれば、学食の食材費補助に充てることで、学生の食事代を大幅に削減できたはずです。
+                </p>
+                <p className="text-xs text-green-700 font-semibold">例：昼食代を100円削減</p>
+              </div>
+
+              <div className="bg-white rounded-lg p-6 border-l-4 border-green-500">
+                <h4 className="font-bold text-slate-900 mb-3">サークル活動への補助金増額</h4>
+                <p className="text-sm mb-3">
+                  学生の課外活動を支援するための予算を大幅に増やし、より充実した学生生活を実現できたはずです。
+                </p>
+                <p className="text-xs text-green-700 font-semibold">例：サークル予算を30%増額</p>
+              </div>
+
+              <div className="bg-white rounded-lg p-6 border-l-4 border-green-500">
+                <h4 className="font-bold text-slate-900 mb-3">図書館・施設の充実</h4>
+                <p className="text-sm mb-3">
+                  図書館の蔵書拡充、自習スペースの整備、キャンパス施設のリノベーションなど、学習環境を大幅に改善できたはずです。
+                </p>
+                <p className="text-xs text-green-700 font-semibold">例：図書購入費を50%増額</p>
+              </div>
+
+              <div className="bg-white rounded-lg p-6 border-l-4 border-green-500">
+                <h4 className="font-bold text-slate-900 mb-3">奨学金制度の拡充</h4>
+                <p className="text-sm mb-3">
+                  経済的に困難な学生への奨学金を増やし、より多くの学生が安心して学べる環境を作ることができたはずです。
+                </p>
+                <p className="text-xs text-green-700 font-semibold">例：奨学金予算を倍増</p>
+              </div>
+
+              <div className="bg-white rounded-lg p-6 border-l-4 border-green-500">
+                <h4 className="font-bold text-slate-900 mb-3">学生向けイベントの充実</h4>
+                <p className="text-sm mb-3">
+                  文化祭、スポーツ大会、講演会など、学生が主体的に参加できるイベントを大幅に拡充できたはずです。
+                </p>
+                <p className="text-xs text-green-700 font-semibold">例：イベント予算を2倍に</p>
+              </div>
+
+              <div className="bg-white rounded-lg p-6 border-l-4 border-green-500">
+                <h4 className="font-bold text-slate-900 mb-3">学生の声が反映される仕組み</h4>
+                <p className="text-sm mb-3">
+                  学生自治会が強化され、学生の意見が大学運営に直接反映される仕組みが構築でき、より良い大学環境が実現できたはずです。
+                </p>
+                <p className="text-xs text-green-700 font-semibold">例：学生参加型の予算編成</p>
+              </div>
+            </div>
+
+            <div className="bg-green-100 border-l-4 border-green-600 p-4 mt-6">
+              <p className="font-semibold text-slate-900">
+                💡 重要なポイント
+              </p>
+              <p className="text-sm mt-2">
+                これらは、もし学生が大学運営に参加し、財務情報の透明性が確保されていたら実現できた改善の例です。学生自治の復活は、単なる「権利」ではなく、皆さんの学生生活をより豊かにするための「必要な仕組み」なのです。
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section className="bg-blue-50 rounded-lg p-8 md:p-12 text-center">
+          <h3 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6">次のステップ</h3>
           <p className="text-slate-700 mb-6">
             大学会計の基礎を理解した上で、学生自治を復活させるための具体的なアクションについて知りたいですか？
           </p>
