@@ -10,33 +10,39 @@ export default function Home() {
       {/* Navigation */}
       <nav className="sticky top-0 z-50 bg-white border-b border-slate-200 shadow-sm">
         <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
-          <h1 className="text-xl font-bold text-slate-900">日大 学生自治復活</h1>
-          <div className="flex gap-6 text-sm">
+          <h1 className="text-lg md:text-xl font-bold text-slate-900">日大 学生自治復活</h1>
+          <div className="hidden md:flex gap-6 text-sm">
             <Link href="/" className="text-slate-700 hover:text-slate-900 font-medium">ホーム</Link>
             <Link href="/history" className="text-slate-700 hover:text-slate-900 font-medium">問題の経緯</Link>
             <Link href="/issues" className="text-slate-700 hover:text-slate-900 font-medium">現状の課題</Link>
             <Link href="/finance" className="text-slate-700 hover:text-slate-900 font-medium">財務情報</Link>
             <Link href="/roadmap" className="text-slate-700 hover:text-slate-900 font-medium">ロードマップ</Link>
           </div>
+          <div className="md:hidden flex gap-3 text-xs">
+            <Link href="/history" className="text-slate-700 hover:text-slate-900 font-medium">経緯</Link>
+            <Link href="/issues" className="text-slate-700 hover:text-slate-900 font-medium">課題</Link>
+            <Link href="/finance" className="text-slate-700 hover:text-slate-900 font-medium">財務</Link>
+            <Link href="/roadmap" className="text-slate-700 hover:text-slate-900 font-medium">行動</Link>
+          </div>
         </div>
       </nav>
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-20 px-4">
+      <section className="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-12 md:py-20 px-4">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-5xl font-bold mb-6">日大の「自治」を取り戻そう</h2>
-          <p className="text-xl text-blue-100 mb-8">学生が主体的に大学運営に関わることの重要性</p>
-          <p className="text-lg text-blue-50 max-w-2xl mx-auto leading-relaxed">
+          <h2 className="text-3xl md:text-5xl font-bold mb-4 md:mb-6">日大の「自治」を取り戻そう</h2>
+          <p className="text-lg md:text-xl text-blue-100 mb-6 md:mb-8">学生が主体的に大学運営に関わることの重要性</p>
+          <p className="text-base md:text-lg text-blue-50 max-w-2xl mx-auto leading-relaxed">
             大学は、学生の学習と成長の場です。しかし、その大学がどのように運営されているか、学生の声が本当に反映されているか、考えたことはありますか？
           </p>
         </div>
       </section>
 
       {/* Main Content */}
-      <main className="flex-1 max-w-6xl mx-auto px-4 py-16 w-full">
+      <main className="flex-1 max-w-6xl mx-auto px-4 py-8 md:py-16 w-full">
         {/* Introduction Section */}
-        <section className="mb-20">
-          <h3 className="text-3xl font-bold text-slate-900 mb-8">日本大学で何が起きたのか</h3>
+        <section className="mb-12 md:mb-20">
+          <h3 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6 md:mb-8">日本大学で何が起きたのか</h3>
           <div className="grid md:grid-cols-2 gap-8 mb-12">
             <div className="text-slate-700 leading-relaxed space-y-4">
               <p>

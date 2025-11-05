@@ -10,25 +10,31 @@ export default function Finance() {
     <div className="min-h-screen flex flex-col bg-gradient-to-b from-slate-50 to-white">
       <nav className="sticky top-0 z-50 bg-white border-b border-slate-200 shadow-sm">
         <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
-          <h1 className="text-xl font-bold text-slate-900">日大 学生自治復活</h1>
-          <div className="flex gap-6 text-sm">
+          <h1 className="text-lg md:text-xl font-bold text-slate-900">日大 学生自治復活</h1>
+          <div className="hidden md:flex gap-6 text-sm">
             <Link href="/" className="text-slate-700 hover:text-slate-900 font-medium">ホーム</Link>
             <Link href="/history" className="text-slate-700 hover:text-slate-900 font-medium">問題の経緯</Link>
             <Link href="/issues" className="text-slate-700 hover:text-slate-900 font-medium">現状の課題</Link>
             <Link href="/finance" className="text-slate-700 hover:text-slate-900 font-medium">財務情報</Link>
             <Link href="/roadmap" className="text-slate-700 hover:text-slate-900 font-medium">ロードマップ</Link>
           </div>
+          <div className="md:hidden flex gap-3 text-xs">
+            <Link href="/history" className="text-slate-700 hover:text-slate-900 font-medium">経緯</Link>
+            <Link href="/issues" className="text-slate-700 hover:text-slate-900 font-medium">課題</Link>
+            <Link href="/finance" className="text-slate-700 hover:text-slate-900 font-medium">財務</Link>
+            <Link href="/roadmap" className="text-slate-700 hover:text-slate-900 font-medium">行動</Link>
+          </div>
         </div>
       </nav>
 
-      <main className="flex-1 max-w-6xl mx-auto px-4 py-12 w-full">
-        <Link href="/" className="flex items-center gap-2 text-blue-600 hover:text-blue-800 mb-8">
+      <main className="flex-1 max-w-6xl mx-auto px-4 py-6 md:py-12 w-full">
+        <Link href="/" className="flex items-center gap-2 text-blue-600 hover:text-blue-800 mb-6 md:mb-8">
           <ChevronLeft className="w-4 h-4" />
           ホームに戻る
         </Link>
 
-        <h1 className="text-4xl font-bold text-slate-900 mb-8">日大のお金の流れを見える化する</h1>
-        <p className="text-lg text-slate-700 mb-12">令和5年度（2023年度）資金収支計算書から見える、日大の財務構造</p>
+        <h1 className="text-2xl md:text-4xl font-bold text-slate-900 mb-4 md:mb-8">日大のお金の流れを見える化する</h1>
+        <p className="text-base md:text-lg text-slate-700 mb-8 md:mb-12">令和5年度（2023年度）資金收支計算書から見える、日大の財務構造</p>
 
         <section className="mb-12">
           <Card>
@@ -52,17 +58,17 @@ export default function Finance() {
           </Card>
         </section>
 
-        <section className="mb-12">
-          <div className="bg-white rounded-lg shadow-lg p-4">
+        <section className="mb-8 md:mb-12 overflow-x-auto">
+          <div className="bg-white rounded-lg shadow-lg p-2 md:p-4">
             <iframe 
               src="/nihon-u-student-autonomy/sankey_diagram.html" 
-              style={{width: '100%', height: '800px', border: 'none'}}
+              style={{width: '100%', height: 'auto', minHeight: '500px', border: 'none'}}
               onLoad={() => setIframeLoaded(true)}
             ></iframe>
           </div>
         </section>
 
-        <section className="grid md:grid-cols-2 gap-8 mb-12">
+        <section className="grid md:grid-cols-2 gap-6 md:gap-8 mb-8 md:mb-12">
           <Card>
             <CardHeader>
               <CardTitle>主要な収入源</CardTitle>
