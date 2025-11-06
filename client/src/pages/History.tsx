@@ -308,7 +308,7 @@ export default function History() {
             これらの不正事件の根本原因は、日本大学のガバナンス（運営体制）の欠陥にあります。
           </p>
           <Link href="/issues" className="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 font-semibold">
-            ガバナンス欠陥を詳しく見る
+            ガバナンス欠陥を詳しく読む
           </Link>
         </section>
       </main>

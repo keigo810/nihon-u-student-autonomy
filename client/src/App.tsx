@@ -1,7 +1,8 @@
+import { useEffect } from "react";
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/NotFound";
-import { Route, Switch } from "wouter";
+import { Route, Switch, Router, useLocation } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
@@ -10,20 +11,37 @@ import History from "./pages/History";
 import Issues from "./pages/Issues";
 import Finance from "./pages/Finance";
 import Roadmap from "./pages/Roadmap";
+import FinanceLearn from "./pages/FinanceLearn";
+import FAQ from "./pages/FAQ";
 
-function Router() {
+function ScrollToTop() {
+  const [location] = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
+
+  return null;
+}
+
+function AppRouter() {
   return (
-    <Switch>
-      <Route path={"/"} component={Home} />
-      <Route path={"/governance"} component={Governance} />
-      <Route path={"/history"} component={History} />
-      <Route path={"/issues"} component={Issues} />
-      <Route path={"/finance"} component={Finance} />
-      <Route path={"/roadmap"} component={Roadmap} />
-      <Route path={"/404"} component={NotFound} />
-      {/* Final fallback route */}
-      <Route component={NotFound} />
-    </Switch>
+    <>
+      <ScrollToTop />
+      <Switch>
+        <Route path={"/"} component={Home} />
+        <Route path={"/governance"} component={Governance} />
+        <Route path={"/history"} component={History} />
+        <Route path={"/issues"} component={Issues} />
+        <Route path={"/finance"} component={Finance} />
+        <Route path={"/finance-learn"} component={FinanceLearn} />
+        <Route path={"/roadmap"} component={Roadmap} />
+        <Route path={"/faq"} component={FAQ} />
+        <Route path={"/404"} component={NotFound} />
+        {/* Final fallback route */}
+        <Route component={NotFound} />
+      </Switch>
+    </>
   );
 }
 
@@ -41,7 +59,9 @@ function App() {
       >
         <TooltipProvider>
           <Toaster />
-          <Router />
+          <Router base="/nihon-u-student-autonomy">
+            <AppRouter />
+          </Router>
         </TooltipProvider>
       </ThemeProvider>
     </ErrorBoundary>

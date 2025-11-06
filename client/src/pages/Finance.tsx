@@ -10,25 +10,31 @@ export default function Finance() {
     <div className="min-h-screen flex flex-col bg-gradient-to-b from-slate-50 to-white">
       <nav className="sticky top-0 z-50 bg-white border-b border-slate-200 shadow-sm">
         <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
-          <h1 className="text-xl font-bold text-slate-900">日大 学生自治復活</h1>
-          <div className="flex gap-6 text-sm">
+          <h1 className="text-lg md:text-xl font-bold text-slate-900">日大 学生自治復活</h1>
+          <div className="hidden md:flex gap-6 text-sm">
             <Link href="/" className="text-slate-700 hover:text-slate-900 font-medium">ホーム</Link>
             <Link href="/history" className="text-slate-700 hover:text-slate-900 font-medium">問題の経緯</Link>
             <Link href="/issues" className="text-slate-700 hover:text-slate-900 font-medium">現状の課題</Link>
             <Link href="/finance" className="text-slate-700 hover:text-slate-900 font-medium">財務情報</Link>
             <Link href="/roadmap" className="text-slate-700 hover:text-slate-900 font-medium">ロードマップ</Link>
           </div>
+          <div className="md:hidden flex gap-3 text-xs">
+            <Link href="/history" className="text-slate-700 hover:text-slate-900 font-medium">経緯</Link>
+            <Link href="/issues" className="text-slate-700 hover:text-slate-900 font-medium">課題</Link>
+            <Link href="/finance" className="text-slate-700 hover:text-slate-900 font-medium">財務</Link>
+            <Link href="/roadmap" className="text-slate-700 hover:text-slate-900 font-medium">行動</Link>
+          </div>
         </div>
       </nav>
 
-      <main className="flex-1 max-w-6xl mx-auto px-4 py-12 w-full">
-        <Link href="/" className="flex items-center gap-2 text-blue-600 hover:text-blue-800 mb-8">
+      <main className="flex-1 max-w-6xl mx-auto px-4 py-6 md:py-12 w-full">
+        <Link href="/" className="flex items-center gap-2 text-blue-600 hover:text-blue-800 mb-6 md:mb-8">
           <ChevronLeft className="w-4 h-4" />
           ホームに戻る
         </Link>
 
-        <h1 className="text-4xl font-bold text-slate-900 mb-8">日大のお金の流れを見える化する</h1>
-        <p className="text-lg text-slate-700 mb-12">令和5年度（2023年度）資金収支計算書から見える、日大の財務構造</p>
+        <h1 className="text-2xl md:text-4xl font-bold text-slate-900 mb-4 md:mb-8">日大のお金の流れを見える化する</h1>
+        <p className="text-base md:text-lg text-slate-700 mb-8 md:mb-12">令和5年度（2023年度）資金收支計算書から見える、日大の財務構造</p>
 
         <section className="mb-12">
           <Card>
@@ -37,26 +43,32 @@ export default function Finance() {
             </CardHeader>
             <CardContent className="text-slate-700 space-y-4">
               <p>
-                下のサンキー図は、日本大学がどのようにお金を集め、何に使っているかを視覚化したものです。左側が「収入」、右側が「支出」を表しています。
+                下のサンキー図は、日本大学がどのようにお金を集め、何に使っているかを視覚化したものです。左側が「収入」、中央が「総資金」、右側が「支出」を表しています。
               </p>
               <p>
                 流れの太さは金額の大きさを表しており、太い流れほど大きな金額が流れていることを示しています。
               </p>
+              <p className="text-sm text-slate-600 italic">
+                💡 <strong>重要：</strong> 支出が収入を上回っているように見えますが、これは大学会計の特殊性によるものです。基本金、減価償却費、内部留保などの概念を理解することが重要です。
+              </p>
+              <Link href="/finance-learn" className="inline-block mt-4 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 font-semibold text-sm">
+                大学会計の基礎を学ぶ →
+              </Link>
             </CardContent>
           </Card>
         </section>
 
-        <section className="mb-12">
-          <div className="bg-white rounded-lg shadow-lg p-4">
+        <section className="mb-8 md:mb-12 overflow-x-auto">
+          <div className="bg-white rounded-lg shadow-lg p-2 md:p-4">
             <iframe 
-              src="/sankey_diagram.html" 
-              style={{width: '100%', height: '800px', border: 'none'}}
+              src="/nihon-u-student-autonomy/sankey_diagram.html" 
+              style={{width: '100%', height: 'auto', minHeight: '500px', border: 'none'}}
               onLoad={() => setIframeLoaded(true)}
             ></iframe>
           </div>
         </section>
 
-        <section className="grid md:grid-cols-2 gap-8 mb-12">
+        <section className="grid md:grid-cols-2 gap-6 md:gap-8 mb-8 md:mb-12">
           <Card>
             <CardHeader>
               <CardTitle>主要な収入源</CardTitle>
@@ -133,14 +145,87 @@ export default function Finance() {
           </div>
         </section>
 
-        <section className="bg-blue-50 rounded-lg p-8 text-center">
-          <h3 className="text-xl font-bold text-slate-900 mb-4">次のステップ</h3>
+        <section className="bg-green-50 rounded-lg p-8 mb-12">
+          <h3 className="text-2xl font-bold text-slate-900 mb-6">もし学生が大学運営に関われたら？</h3>
+          <div className="space-y-6 text-slate-700">
+            <p className="text-lg font-semibold text-green-700">
+              不正事案によって失われた資金が、学生のために使われていたら、どのような改善ができたでしょうか？
+            </p>
+            
+            <div className="grid md:grid-cols-2 gap-6">
+              <div className="bg-white rounded-lg p-6 border-l-4 border-green-500">
+                <h4 className="font-bold text-slate-900 mb-3">学食の値下げ</h4>
+                <p className="text-sm mb-3">
+                  毎年数億円の不正資金が適切に管理されていれば、学食の食材費補助に充てることで、学生の食事代を大幅に削減できたはずです。
+                </p>
+                <p className="text-xs text-green-700 font-semibold">例：昼食代を100円削減</p>
+              </div>
+
+              <div className="bg-white rounded-lg p-6 border-l-4 border-green-500">
+                <h4 className="font-bold text-slate-900 mb-3">サークル活動への補助金増額</h4>
+                <p className="text-sm mb-3">
+                  学生の課外活動を支援するための予算を大幅に増やし、より充実した学生生活を実現できたはずです。
+                </p>
+                <p className="text-xs text-green-700 font-semibold">例：サークル予算を30%増額</p>
+              </div>
+
+              <div className="bg-white rounded-lg p-6 border-l-4 border-green-500">
+                <h4 className="font-bold text-slate-900 mb-3">図書館・施設の充実</h4>
+                <p className="text-sm mb-3">
+                  図書館の蔵書拡充、自習スペースの整備、キャンパス施設のリノベーションなど、学習環境を大幅に改善できたはずです。
+                </p>
+                <p className="text-xs text-green-700 font-semibold">例：図書購入費を50%増額</p>
+              </div>
+
+              <div className="bg-white rounded-lg p-6 border-l-4 border-green-500">
+                <h4 className="font-bold text-slate-900 mb-3">奨学金制度の拡充</h4>
+                <p className="text-sm mb-3">
+                  経済的に困難な学生への奨学金を増やし、より多くの学生が安心して学べる環境を作ることができたはずです。
+                </p>
+                <p className="text-xs text-green-700 font-semibold">例：奨学金予算を倍増</p>
+              </div>
+
+              <div className="bg-white rounded-lg p-6 border-l-4 border-green-500">
+                <h4 className="font-bold text-slate-900 mb-3">学生向けイベントの充実</h4>
+                <p className="text-sm mb-3">
+                  文化祭、スポーツ大会、講演会など、学生が主体的に参加できるイベントを大幅に拡充できたはずです。
+                </p>
+                <p className="text-xs text-green-700 font-semibold">例：イベント予算を2倍に</p>
+              </div>
+
+              <div className="bg-white rounded-lg p-6 border-l-4 border-green-500">
+                <h4 className="font-bold text-slate-900 mb-3">学生の声が反映される仕組み</h4>
+                <p className="text-sm mb-3">
+                  学生自治会が強化され、学生の意見が大学運営に直接反映される仕組みが構築でき、より良い大学環境が実現できたはずです。
+                </p>
+                <p className="text-xs text-green-700 font-semibold">例：学生参加型の予算編成</p>
+              </div>
+            </div>
+
+            <div className="bg-green-100 border-l-4 border-green-600 p-4 mt-6">
+              <p className="font-semibold text-slate-900">
+                💡 重要なポイント
+              </p>
+              <p className="text-sm mt-2">
+                これらは、もし学生が大学運営に参加し、財務情報の透明性が確保されていたら実現できた改善の例です。学生自治の復活は、単なる「権利」ではなく、皆さんの学生生活をより豊かにするための「必要な仕組み」なのです。
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section className="bg-blue-50 rounded-lg p-8 md:p-12 text-center">
+          <h3 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6">次のステップ</h3>
           <p className="text-slate-700 mb-6">
-            学生自治を復活させるための具体的なアクションについて知りたいですか？
+            大学会計の基礎を理解した上で、学生自治を復活させるための具体的なアクションについて知りたいですか？
           </p>
-          <Link href="/roadmap" className="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 font-semibold">
-            ロードマップを見る
-          </Link>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link href="/finance-learn" className="inline-block bg-white text-blue-600 px-6 py-3 rounded-lg hover:bg-blue-50 font-semibold border-2 border-blue-600">
+              大学会計を詳しく学ぶ
+            </Link>
+            <Link href="/roadmap" className="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 font-semibold">
+              ロードマップを見る
+            </Link>
+          </div>
         </section>
       </main>
 

@@ -4,11 +4,16 @@ import react from "@vitejs/plugin-react";
 import fs from "node:fs";
 import path from "path";
 import { defineConfig } from "vite";
+
+// GitHub Pagesで公開するための設定
+const REPO_NAME = 'nihon-u-student-autonomy';
+const BASE_PATH = `/${REPO_NAME}/`;
 import { vitePluginManusRuntime } from "vite-plugin-manus-runtime";
 
 const plugins = [react(), tailwindcss(), jsxLocPlugin(), vitePluginManusRuntime()];
 
 export default defineConfig({
+  base: BASE_PATH,
   plugins,
   resolve: {
     alias: {
