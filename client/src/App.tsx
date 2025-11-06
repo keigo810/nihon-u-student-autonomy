@@ -8,6 +8,7 @@ import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
 import Governance from "./pages/Governance";
 import History from "./pages/History";
+import BusinessDivision from "./pages/BusinessDivision";
 import Issues from "./pages/Issues";
 import Finance from "./pages/Finance";
 import Roadmap from "./pages/Roadmap";
@@ -31,6 +32,7 @@ function AppRouter() {
         <Route path={"/"} component={Home} />
         <Route path={"/governance"} component={Governance} />
         <Route path={"/history"} component={History} />
+        <Route path={"/business-division"} component={BusinessDivision} />
         <Route path={"/issues"} component={Issues} />
         <Route path={"/finance"} component={Finance} />
         <Route path={"/finance-learn"} component={FinanceLearn} />

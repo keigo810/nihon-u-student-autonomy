@@ -14,12 +14,14 @@ export default function Finance() {
           <div className="hidden md:flex gap-6 text-sm">
             <Link href="/" className="text-slate-700 hover:text-slate-900 font-medium">ホーム</Link>
             <Link href="/history" className="text-slate-700 hover:text-slate-900 font-medium">問題の経緯</Link>
+            <Link href="/business-division" className="text-slate-700 hover:text-slate-900 font-medium">事業部の実態</Link>
             <Link href="/issues" className="text-slate-700 hover:text-slate-900 font-medium">現状の課題</Link>
             <Link href="/finance" className="text-slate-700 hover:text-slate-900 font-medium">財務情報</Link>
             <Link href="/roadmap" className="text-slate-700 hover:text-slate-900 font-medium">ロードマップ</Link>
           </div>
           <div className="md:hidden flex gap-3 text-xs">
             <Link href="/history" className="text-slate-700 hover:text-slate-900 font-medium">経緯</Link>
+            <Link href="/business-division" className="text-slate-700 hover:text-slate-900 font-medium">事業部</Link>
             <Link href="/issues" className="text-slate-700 hover:text-slate-900 font-medium">課題</Link>
             <Link href="/finance" className="text-slate-700 hover:text-slate-900 font-medium">財務</Link>
             <Link href="/roadmap" className="text-slate-700 hover:text-slate-900 font-medium">行動</Link>

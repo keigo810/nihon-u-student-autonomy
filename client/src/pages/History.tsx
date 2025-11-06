@@ -15,6 +15,9 @@ export default function History() {
             <Link href="/history" className="text-slate-700 hover:text-slate-900 font-medium">
               問題の経緯
             </Link>
+            <Link href="/business-division" className="text-slate-700 hover:text-slate-900 font-medium">
+              事業部の実態
+            </Link>
             <Link href="/issues" className="text-slate-700 hover:text-slate-900 font-medium">
               現状の課題
             </Link>

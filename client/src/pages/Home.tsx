@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { ChevronRight, BookOpen, BarChart3, Lightbulb, Users } from "lucide-react";
+import { ChevronRight, BookOpen, BarChart3, Lightbulb, Users, Building2 } from "lucide-react";
 import { Link } from "wouter";
 import { APP_TITLE } from "@/const";
 
@@ -14,12 +14,14 @@ export default function Home() {
           <div className="hidden md:flex gap-6 text-sm">
             <Link href="/" className="text-slate-700 hover:text-slate-900 font-medium">ホーム</Link>
             <Link href="/history" className="text-slate-700 hover:text-slate-900 font-medium">問題の経緯</Link>
+            <Link href="/business-division" className="text-slate-700 hover:text-slate-900 font-medium">事業部の実態</Link>
             <Link href="/issues" className="text-slate-700 hover:text-slate-900 font-medium">現状の課題</Link>
             <Link href="/finance" className="text-slate-700 hover:text-slate-900 font-medium">財務情報</Link>
             <Link href="/roadmap" className="text-slate-700 hover:text-slate-900 font-medium">ロードマップ</Link>
           </div>
           <div className="md:hidden flex gap-3 text-xs">
             <Link href="/history" className="text-slate-700 hover:text-slate-900 font-medium">経緯</Link>
+            <Link href="/business-division" className="text-slate-700 hover:text-slate-900 font-medium">事業部</Link>
             <Link href="/issues" className="text-slate-700 hover:text-slate-900 font-medium">課題</Link>
             <Link href="/finance" className="text-slate-700 hover:text-slate-900 font-medium">財務</Link>
             <Link href="/roadmap" className="text-slate-700 hover:text-slate-900 font-medium">行動</Link>
@@ -99,7 +101,32 @@ export default function Home() {
               </Card>
             </Link>
 
-            {/* Card 2: Current Issues */}
+            {/* Card 2: Business Division */}
+            <Link href="/business-division">
+              <Card className="hover:shadow-lg transition-shadow cursor-pointer h-full">
+                <CardHeader>
+                  <div className="flex items-start justify-between">
+                    <div>
+                      <CardTitle className="flex items-center gap-2">
+                        <Building2 className="w-5 h-5 text-red-600" />
+                        事業部の実態
+                      </CardTitle>
+                      <CardDescription>ブラックボックス化した子会社の実像</CardDescription>
+                    </div>
+                  </div>
+                </CardHeader>
+                <CardContent className="text-slate-700">
+                  <p className="mb-4">
+                    取締役会の形骸化、監査が届かなかった理由、刑事事件では触れられない迂回スキームを第三者委員会報告書から読み解きます。
+                  </p>
+                  <div className="flex items-center text-blue-600 font-semibold">
+                    詳しく見る <ChevronRight className="w-4 h-4 ml-2" />
+                  </div>
+                </CardContent>
+              </Card>
+            </Link>
+
+            {/* Card 3: Current Issues */}
             <Link href="/issues">
               <Card className="hover:shadow-lg transition-shadow cursor-pointer h-full">
                 <CardHeader>
@@ -124,7 +151,7 @@ export default function Home() {
               </Card>
             </Link>
 
-            {/* Card 3: Finance */}
+            {/* Card 4: Finance */}
             <Link href="/finance">
               <Card className="hover:shadow-lg transition-shadow cursor-pointer h-full">
                 <CardHeader>
@@ -149,7 +176,7 @@ export default function Home() {
               </Card>
             </Link>
 
-            {/* Card 4: Roadmap */}
+            {/* Card 5: Roadmap */}
             <Link href="/roadmap">
               <Card className="hover:shadow-lg transition-shadow cursor-pointer h-full">
                 <CardHeader>

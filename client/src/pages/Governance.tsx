@@ -12,6 +12,7 @@ export default function Governance() {
             <Link href="/" className="text-slate-700 hover:text-slate-900 font-medium">ホーム</Link>
             <Link href="/governance" className="text-slate-700 hover:text-slate-900 font-medium">ガバナンスとは</Link>
             <Link href="/history" className="text-slate-700 hover:text-slate-900 font-medium">不正事案の詳細</Link>
+            <Link href="/business-division" className="text-slate-700 hover:text-slate-900 font-medium">事業部の実態</Link>
             <Link href="/issues" className="text-slate-700 hover:text-slate-900 font-medium">ガバナンス欠陥</Link>
             <Link href="/finance" className="text-slate-700 hover:text-slate-900 font-medium">財務情報</Link>
             <Link href="/roadmap" className="text-slate-700 hover:text-slate-900 font-medium">改革と行動</Link>
