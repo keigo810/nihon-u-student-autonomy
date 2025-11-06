@@ -6,7 +6,7 @@ import { Route, Switch, Router, useLocation } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
-import Governance from "./pages/Governance";
+import { GovernanceTheory } from "./pages/GovernanceTheory";
 import History from "./pages/History";
 import Issues from "./pages/Issues";
 import Finance from "./pages/Finance";
@@ -30,7 +30,7 @@ function AppRouter() {
       <ScrollToTop />
       <Switch>
         <Route path={"/"} component={Home} />
-        <Route path={"/governance"} component={Governance} />
+        <Route path={"/governance"} component={GovernanceTheory} />
         <Route path={"/history"} component={History} />
         <Route path={"/issues"} component={Issues} />
         <Route path={"/finance"} component={Finance} />
