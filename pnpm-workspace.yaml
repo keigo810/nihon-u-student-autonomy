@@ -1,4 +1,0 @@
-onlyBuiltDependencies:
-  - patch-package
-  - esbuild
-  - rollup
