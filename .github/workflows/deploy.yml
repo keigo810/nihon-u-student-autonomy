@@ -21,7 +21,7 @@ jobs:
 
       - uses: pnpm/action-setup@v4
         with:
-          version: 10
+          run_install: false   # version指定しない＝package.jsonのpackageManagerに従う
 
       - uses: actions/setup-node@v4
         with:
@@ -29,7 +29,7 @@ jobs:
           cache: 'pnpm'
           cache-dependency-path: pnpm-lock.yaml
 
-      # ここで patch-package を先に用意しておく
+      # patch-package を先に用意（postinstallで必要）
       - run: pnpm add -g patch-package
 
       - run: pnpm install --no-frozen-lockfile
