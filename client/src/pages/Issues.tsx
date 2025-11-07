@@ -26,7 +26,26 @@ export default function Issues() {
         </Link>
 
         <h1 className="text-4xl font-bold text-slate-900 mb-4">ガバナンス欠陥の分析</h1>
-        <p className="text-lg text-slate-600 mb-8">なぜ不正事件が起きたのか？経営学的な視点から分析します</p>
+        <p className="text-lg text-slate-600 mb-4">なぜ不正事件が起きたのか？経営学的な視点から分析します</p>
+        
+        {/* Source Reference */}
+        <div className="bg-blue-50 border-l-4 border-blue-600 p-4 mb-8">
+          <p className="text-sm text-slate-700">
+            <strong>情報源：</strong>
+            <a 
+              href="https://www.nihon-u.ac.jp/uploads/files/20220331152658.pdf" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-blue-600 hover:text-blue-800 underline ml-2"
+            >
+              元理事及び前理事長による不正事案に係る調査報告書
+            </a>
+            （第3章 原因の分析 p.168-187）
+          </p>
+          <p className="text-xs text-slate-600 mt-2">
+            このページの分析は、上記の公式調査報告書に基づいています。
+          </p>
+        </div>
 
         {/* Introduction */}
         <section className="mb-12">
@@ -99,11 +118,32 @@ export default function Issues() {
             </CardContent>
           </Card>
         </section>
-
-        {/* Issue 2: Audit Dysfunction */}
+        {/* Issue 2: Audit Function Failure */}
         <section className="mb-12">
           <h2 className="text-2xl font-bold text-slate-900 mb-6">欠陥2：監査機能の不全</h2>
           
+          {/* Report Quote */}
+          <Card className="mb-6 bg-amber-50 border-amber-300">
+            <CardHeader>
+              <CardTitle className="text-lg">調査報告書の指摘（第7章 p.183-186）</CardTitle>
+            </CardHeader>
+            <CardContent className="text-slate-700 space-y-4">
+              <p className="text-sm">
+                報告書は、不正が発生した8つの原因のうち、<strong>「第7 調達要件の緩和と日大による監督の不全」</strong>を明確に指摘しています。
+              </p>
+              <div className="bg-white p-4 rounded border-l-4 border-amber-500">
+                <h4 className="font-semibold text-slate-900 mb-2">監査体制の実態：</h4>
+                <ul className="text-sm space-y-2 ml-4 list-disc">
+                  <li><strong>日本大学監査団</strong>：機能していなかった</li>
+                  <li><strong>日大監事</strong>：監査が形骸化していた</li>
+                  <li><strong>事業部の監査役</strong>：監査範囲は会計に限定されておらず、業務監査も含まれていたが、実際には機能していなかった</li>
+                </ul>
+              </div>
+              <p className="text-sm italic">
+                これらの監査機関が適切に機能していれば、不正は早期に発見され、防止できたはずです。
+              </p>
+            </CardContent>
+          </Card>       
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
             <Card className="border-l-4 border-l-green-500">
               <CardHeader>

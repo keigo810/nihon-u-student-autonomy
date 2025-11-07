@@ -28,7 +28,26 @@ export default function History() {
         </Link>
 
         <h1 className="text-4xl font-bold text-slate-900 mb-4">不正事案の詳細</h1>
-        <p className="text-lg text-slate-600 mb-8">日本大学で何が起きたのか、具体的な事件を詳しく解説します</p>
+        <p className="text-lg text-slate-600 mb-4">日本大学で何が起きたのか、具体的な事件を詳しく解説します</p>
+        
+        {/* Source Reference */}
+        <div className="bg-blue-50 border-l-4 border-blue-600 p-4 mb-8">
+          <p className="text-sm text-slate-700">
+            <strong>情報源：</strong>
+            <a 
+              href="https://www.nihon-u.ac.jp/uploads/files/20220331152658.pdf" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-blue-600 hover:text-blue-800 underline ml-2"
+            >
+              元理事及び前理事長による不正事案に係る調査報告書
+            </a>
+            （令和4年3月31日、第三者委員会、全238ページ）
+          </p>
+          <p className="text-xs text-slate-600 mt-2">
+            このページの内容は、上記の公式調査報告書に基づいています。
+          </p>
+        </div>
 
         {/* Overview Section */}
         <section className="mb-12">
@@ -279,6 +298,54 @@ export default function History() {
           </div>
         </section>
 
+        {/* Other Cases */}
+        <section className="mb-12">
+          <h2 className="text-2xl font-bold text-slate-900 mb-6">その他の不正事案</h2>
+          
+          <Card className="mb-6 border-l-4 border-l-purple-500">
+            <CardHeader>
+              <CardTitle className="text-lg">調査報告書で明らかになった多数の不正</CardTitle>
+            </CardHeader>
+            <CardContent className="text-slate-700 space-y-4">
+              <p>
+                第三者委員会の調査報告書（第2章第4節 p.111-130）は、上記3つの事件以外にも、多数の不正事案があったことを明らかにしています。
+              </p>
+              
+              <div className="bg-slate-50 p-4 rounded-lg space-y-3">
+                <div>
+                  <h4 className="font-semibold text-slate-900 mb-2">1. 不公正な調達手続を行った案件</h4>
+                  <p className="text-sm">複数の案件で、競争入札や相見積もりを行わず、特定の業者に発注。井ノ口氏の指示により、不公正な手続きが常態化していました。</p>
+                </div>
+                
+                <div className="border-t border-slate-200 pt-3">
+                  <h4 className="font-semibold text-slate-900 mb-2">2. 特定の業者に不当な利益を得させた案件</h4>
+                  <p className="text-sm">特定の業者に対し、不当に高額な発注を行った疑い。リベートの見返りとして、業者に利益を供与していました。</p>
+                </div>
+                
+                <div className="border-t border-slate-200 pt-3">
+                  <h4 className="font-semibold text-slate-900 mb-2">3. 事業部の私物化行為</h4>
+                  <p className="text-sm mb-2">報告書（p.172）は、「事業部の私物化」を以下のように指摘しています：</p>
+                  <ul className="text-sm space-y-1 ml-4 list-disc">
+                    <li>取引先に対し、田中氏等の就任祝いを要求</li>
+                    <li>相撲関係団体への寄付を要求</li>
+                    <li>田中氏夫人のお世話係を事業部で雇用</li>
+                    <li>事業部の社宅に井ノ口氏の親族を居住させる</li>
+                    <li>田中氏の休憩用にマンションの一室を事業部が賃借</li>
+                  </ul>
+                </div>
+                
+                <div className="border-t border-slate-200 pt-3">
+                  <h4 className="font-semibold text-slate-900 mb-2">4. 「日大を食い物にする行為」</h4>
+                  <p className="text-sm">報告書（p.172）は、さらに重要な指摘をしています：</p>
+                  <blockquote className="text-sm italic bg-white p-3 rounded mt-2 border-l-4 border-red-500">
+                    「事業部は日大の100%子会社であることや、本件一連の不正行為が日大の発注する取引について行われていたこと等に照らせば、井ノ口氏、田中氏らに供与された現金・利益等の原資はもともと日大に帰属していたものということができ、『事業部の私物化』は、<strong>日大を『食い物』にする行為</strong>でもある。」
+                  </blockquote>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </section>
+
         {/* Total Damage */}
         <section className="mb-12">
           <Card className="bg-gradient-to-r from-red-50 to-orange-50 border-red-300">
@@ -292,7 +359,8 @@ export default function History() {
               <div className="space-y-2">
                 <p>• 第1事件（設計会社選定）：2億2000万円</p>
                 <p>• 第2事件（医療機器等調達）：約2億600万円</p>
-                <p>• その他関連事件：約1億円以上</p>
+                <p>• 第3事件（脱税）：5233万円</p>
+                <p>• その他の不正事案：金額不明（多数）</p>
               </div>
               <p className="font-semibold text-red-900 mt-4">
                 これはあなたの学費から流出した金銭です。
