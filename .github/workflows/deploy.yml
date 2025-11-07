@@ -1,9 +1,7 @@
-name: Deploy to GitHub Pages
-
+name: deploy
 on:
   push:
-    branches:
-      - main
+    branches: [ "main" ]
   workflow_dispatch:
 
 permissions:
@@ -11,53 +9,42 @@ permissions:
   pages: write
   id-token: write
 
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
+      - uses: actions/checkout@v4
 
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v3
+      - uses: pnpm/action-setup@v4
         with:
-          version: 8
-          run_install: false
+          version: 10
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: 20
-      - name: Get pnpm store directory
-        shell: bash
-        run: |
-          echo "PNPM_CACHE_DIR=$(pnpm store path)" >> $GITHUB_ENV
+          cache: 'pnpm'
+          cache-dependency-path: pnpm-lock.yaml
 
-      - uses: actions/cache@v4
-        name: Setup pnpm cache
+      # ここで patch-package を先に用意しておく
+      - run: pnpm add -g patch-package
+
+      - run: pnpm install --no-frozen-lockfile
+      - run: pnpm build
+
+      - uses: actions/upload-pages-artifact@v3
         with:
-          path: ${{ env.PNPM_CACHE_DIR }}
-          key: ${{ runner.os }}-pnpm-v1-${{ hashFiles('**/package.json') }} # ここを修正しました
-          restore-keys: |
-            ${{ runner.os }}-pnpm-
+          path: ./dist
 
-      - name: Install dependencies
-        run: pnpm install
-
-      - name: Build
-        run: pnpm run build
-
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          # ビルド成果物が出力されるディレクトリ
-          path: 'dist/public'
-
-      - name: Deploy to GitHub Pages
-        id: deployment
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
         uses: actions/deploy-pages@v4
