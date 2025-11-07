@@ -41,7 +41,7 @@ jobs:
         name: Setup pnpm cache
         with:
           path: ${{ env.PNPM_CACHE_DIR }}
-          key: ${{ runner.os }}-pnpm-${{ hashFiles('**/pnpm-lock.yaml') }}
+          key: ${{ runner.os }}-pnpm-v1-${{ hashFiles('**/package.json') }} # ここを修正しました
           restore-keys: |
             ${{ runner.os }}-pnpm-
 
