@@ -76,19 +76,19 @@ export default function Finance() {
             <CardContent className="text-slate-700 space-y-3">
               <div>
                 <p className="font-semibold">学生生徒等納付金（学費）</p>
-                <p className="text-sm">約1,128億6000万円</p>
+                <p className="text-sm">約1,128億6048万円</p>
               </div>
               <div>
                 <p className="font-semibold">病院収入</p>
-                <p className="text-sm">約307億8800万円</p>
+                <p className="text-sm">約307億8827万円</p>
               </div>
               <div>
                 <p className="font-semibold">補助金収入</p>
-                <p className="text-sm">約120億2200万円</p>
+                <p className="text-sm">約120億2284万円</p>
               </div>
               <div>
                 <p className="font-semibold">その他（寄付金、手数料など）</p>
-                <p className="text-sm">約100億円</p>
+                <p className="text-sm">約80億6000万円</p>
               </div>
             </CardContent>
           </Card>
@@ -100,19 +100,19 @@ export default function Finance() {
             <CardContent className="text-slate-700 space-y-3">
               <div>
                 <p className="font-semibold">人件費（給与・福利厚生）</p>
-                <p className="text-sm">約934億7000万円</p>
+                <p className="text-sm">約934億7019万円</p>
               </div>
               <div>
                 <p className="font-semibold">教育研究経費</p>
-                <p className="text-sm">約693億2200万円</p>
+                <p className="text-sm">約693億2211万円</p>
               </div>
               <div>
                 <p className="font-semibold">管理経費</p>
-                <p className="text-sm">約190億7000万円</p>
+                <p className="text-sm">約190億7036万円</p>
               </div>
               <div>
                 <p className="font-semibold">病院経費</p>
-                <p className="text-sm">約181億4100万円</p>
+                <p className="text-sm">約181億4174万円</p>
               </div>
             </CardContent>
           </Card>
