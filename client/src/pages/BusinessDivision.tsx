@@ -1,9 +1,9 @@
-import { Link } from "react-router-dom";
+import { Link } from "wouter";
 
 export default function BusinessDivision() {
   return (
     <div className="container mx-auto px-4 py-8">
-      <Link to="/" className="text-blue-600 hover:text-blue-800 mb-4 inline-block">
+      <Link href="/" className="text-blue-600 hover:text-blue-800 mb-4 inline-block">
         &lt; ホームに戻る
       </Link>
 
